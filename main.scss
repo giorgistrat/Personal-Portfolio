@@ -1,0 +1,217 @@
+$blue: #673ab7;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+// Global Styles
+
+$white: #fff;
+$primary: #673ab7;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.btn-hero {
+  border: 2px solid $primary;
+  color: $primary;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: $primary;
+    z-index: -1;
+    transition: width 0.2s ease;
+  }
+
+  &:hover {
+    color: $white;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    width: 100%;
+  }
+}
+
+// Hero section styles
+
+#hero-section {
+  height: 100vh;
+
+  .hero-container {
+    padding: 13rem 0 13rem 0;
+
+    .hero-text {
+      font-weight: 700;
+      color: rgb(39, 35, 65);
+
+      span {
+        color: $primary;
+      }
+    }
+  }
+}
+
+// About section styles
+
+#about-section {
+  background: $primary;
+  color: $white;
+  padding: 3.5rem 0 7rem 0;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+  .about-title {
+    font-weight: 600;
+  }
+
+  .blockquote-footer {
+    color: rgb(189, 189, 189);
+  }
+
+  .btn-about {
+    border: 2px solid $white;
+    color: $white;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      background-color: $white;
+      z-index: -1;
+      transition: width 0.2s ease;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:hover::before,
+    &:active::before {
+      width: 100%;
+    }
+  }
+}
+
+.testCase {
+  width: 200px;
+  height: 300px;
+  background: red;
+}
+
+// Skills Section
+
+#skills-section {
+  padding: 3.5rem 0 7rem 0;
+
+  .skills-title {
+    font-weight: 600;
+    color: rgb(39, 35, 65);
+  }
+
+  span {
+    color: $primary;
+  }
+
+  .progress-bar,
+  .list-group-item {
+    font-weight: 500;
+  }
+}
+
+// Project Section
+
+#project-section {
+  margin-top: 4rem;
+
+  .project-title {
+    margin-bottom: 5rem;
+  }
+
+  .project-title {
+    font-weight: 600;
+    color: rgb(39, 35, 65);
+  }
+
+  .img-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-name,
+  .project-details {
+    color: rgb(39, 35, 65);
+  }
+
+  .btn-source {
+    color: $primary;
+    font-weight: 600;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+}
+
+// Footer section
+
+#footer-section {
+  margin-top: 10rem;
+  padding: 7rem 0;
+  background: #333333;
+  position: relative;
+
+  .icon-cont .fab {
+    color: #fff;
+    font-size: 2rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      color: $primary;
+    }
+  }
+
+  .arrow-up {
+    font-size: 1.5rem;
+    color: #fff;
+    position: absolute;
+    left: 49%;
+    transform: translateX(-50%);
+    top: 10%;
+  }
+}
+
+// Media Objects
+
+@media screen and(max-width: 768px) {
+  #about-section {
+    clip-path: none;
+  }
+  #project-section {
+    margin-top: 2rem;
+
+    .project-title {
+      margin-bottom: 3rem;
+    }
+  }
+}
